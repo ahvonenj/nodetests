@@ -33,17 +33,7 @@ io.on('connection', function(socket)
 	socket.on('chatmessage', function(chatpacket)
 	{	
 		console.log('(' + chatpacket.userid + ') ' + chatpacket.sender + ': ' + chatpacket.msg);
-	
-		var entityMap = 
-		{
-			"&": "&amp;",
-			"<": "&lt;",
-			">": "&gt;",
-			'"': '&quot;',
-			"'": '&#39;',
-			"/": '&#x2F;'
-		};
-		
+
 		chatpacket.msg = escapeHtml(chatpacket.msg);
 		chatpacket.sender = escapeHtml(chatpacket.sender);
 		
@@ -59,6 +49,16 @@ io.on('connection', function(socket)
 
 function escapeHtml(string) 
 {
+	var entityMap = 
+	{
+		"&": "&amp;",
+		"<": "&lt;",
+		">": "&gt;",
+		'"': '&quot;',
+		"'": '&#39;',
+		"/": '&#x2F;'
+	};
+	
 	return String(string).replace(/[&<>"'\/]/g, function (s) 
 	{
 		return entityMap[s];
