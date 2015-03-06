@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<title>nodejstest</title>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script>
+			var socket = io();
+		  
+			socket.on('changecolorto', function(msg)
+			{
+				//$('body').css('background-color', msg);
+				window.location = msg;
+			});
+		</script>
+	</head>
+	<body>
+		<h1>sockettest</h1>
+		<p>This is a sockettest.</p>
+	</body>
+</html>

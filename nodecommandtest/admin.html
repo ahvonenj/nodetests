@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<title>nodejstest</title>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script>
+		  var socket = io();
+		  
+		  $(document).ready(function()
+		  {
+			$(document).on('click', '#submitbutton', function()
+			{
+				socket.emit('colorcommand', $('#colorfield').val());
+			});
+		  });
+		</script>
+	</head>
+	<body>
+		<h1>admin</h1>
+		<input type = "text" id = "colorfield" />
+		<input type = "button" id = "submitbutton" value = "Execute"/>
+	</body>
+</html>
