@@ -109,7 +109,7 @@ body
 #type_cell_textbox_wrapper
 {
 	float: left;
-	width: calc(100% - 200px - 100px);
+	width: calc(100% - 200px - 117px);
 	height: 100%;
 }
 
@@ -124,7 +124,7 @@ body
 #type_cell_submit_wrapper
 {
 	float: left;
-	width: 200px;
+	width: 217px;
 	height: 100%;
 }
 
@@ -136,11 +136,48 @@ body
 }
 
 /* ROOM CELL */
-#room_cell
+#user_cell
 {
 	width: 200px;
 }
 
+#user_cell_inner
+{
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#user_table
+{
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+
+#user_table td
+{
+	height: 50px;
+	padding-left: 15px;
+	width: 100%;
+	overflow: hidden;
+}
+
+#user_table td div
+{
+	overflow: hidden;
+	width: 200px;
+	height: 100%;
+	line-height: 50px;
+	white-space: nowrap;
+	display:inline-block;
+}
+
+#user_table_last_cell
+{
+	height: 100% !important;
+}
 
 /* CONTINUES */
 
