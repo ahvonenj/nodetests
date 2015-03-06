@@ -1,0 +1,150 @@
+*, html, body
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	width: 100%;
+	height: 100%;
+	background-color: #FDFEFD;
+	font-family: Tahoma, Arial;
+}
+
+#wrapper
+{
+	width: 80vw;
+	height: 80vh;
+	background-color: white;
+	border: 2px solid #E7E7E7;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10vh;
+}
+
+#chat_table
+{
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+
+#chat_table td
+{
+	border: 1px solid #E7E7E7;
+}
+
+/* CHAT CELL */
+#chat_cell
+{
+	width: calc(100% - 200px);
+}
+
+#chat_cell_inner
+{
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#chat_message_table
+{
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+
+#chat_message_table td
+{
+	height: 50px;
+	padding-left: 15px;
+	width: 100%;
+	overflow: hidden;
+}
+
+#chat_message_table td div
+{
+	overflow: hidden;
+	width: calc(80vh - 200px);
+	height: 100%;
+	line-height: 50px;
+	white-space: nowrap;
+	display:inline-block;
+}
+
+#message_table_last_cell
+{
+	height: 100% !important;
+}
+
+/* TYPE CELL */
+#type_cell
+{
+	height: 50px;
+}
+
+#type_cell_inner
+{
+	width: 100%;
+	height: 100%;
+}
+
+#type_cell_userbox_wrapper
+{
+	float: left;
+	width: 100px;
+	height: 100%;
+}
+
+#chat_sender
+{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding-left: 5px;
+}
+
+#type_cell_textbox_wrapper
+{
+	float: left;
+	width: calc(100% - 200px - 100px);
+	height: 100%;
+}
+
+#chat_msg
+{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding-left: 5px;
+}
+
+#type_cell_submit_wrapper
+{
+	float: left;
+	width: 200px;
+	height: 100%;
+}
+
+#chat_submit
+{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+/* ROOM CELL */
+#room_cell
+{
+	width: 200px;
+}
+
+
+/* CONTINUES */
+
+.error_border
+{
+	border: 2px solid #e74c3c;
+}

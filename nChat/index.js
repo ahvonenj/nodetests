@@ -1,10 +1,14 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+app.use('/js', express.static(__dirname + '/js'));
+app.use('/css', express.static(__dirname + '/css'));
+
 app.get('/', function(req, res)
 {
-	res.sendFile(__dirname + '/index.html');
+	res.sendFile(__dirname + '/client.html');
 });
 
 io.on('connection', function(socket)
@@ -16,24 +20,32 @@ io.on('connection', function(socket)
 		console.log('user disconnected');
 	});
 	
-	socket.on('chat message', function(msg)
-	{
-		console.log('message: ' + msg);
-	});
-	
-	socket.on('colorcommand', function(msg)
-	{
-		socket.broadcast.emit('changecolorto', msg);
+	socket.on('chatmessage', function(chatpacket)
+	{		
+		var entityMap = 
+		{
+			"&": "&amp;",
+			"<": "&lt;",
+			">": "&gt;",
+			'"': '&quot;',
+			"'": '&#39;',
+			"/": '&#x2F;'
+		};
+		
+		chatpacket.msg = escapeHtml(chatpacket.msg);
+		chatpacket.sender = escapeHtml(chatpacket.sender);
+		
+		io.sockets.emit('newchatmessage', chatpacket);
 	});
 });
 
-app.get('/admin', function(req, res)
+function escapeHtml(string) 
 {
-	res.sendFile(__dirname + '/admin.html');
-});
-
-
-
+	return String(string).replace(/[&<>"'\/]/g, function (s) 
+	{
+		return entityMap[s];
+	});
+}
 
 
 

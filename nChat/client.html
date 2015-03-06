@@ -2,20 +2,45 @@
 <html>
 	<head>
 		<title>nodejstest</title>
+		<link rel="stylesheet" type = "text/css" href = "/css/index.css">
+		
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<script>
-			var socket = io();
-		  
-			socket.on('changecolorto', function(msg)
-			{
-				
-			});
-		</script>
+		<script src = "/js/client.js"></script>
 	</head>
 	<body>
-		<h1>sockettest</h1>
-		<p>This is a sockettest.</p>
+		<div id = "wrapper">
+			<table id = "chat_table">
+				<tr>
+					<td id = "chat_cell">
+						<div id = "chat_cell_inner">
+							<table id = "chat_message_table">
+								<tr><td>chat initialized...</td></tr>
+								<tr id = "message_table_last_row"><td id = "message_table_last_cell"></td></tr>
+							</table>
+						</div>
+					</td>
+					<td id = "room_cell">
+					
+					</td>
+				</tr>
+				<tr>
+					<td id = "type_cell" colspan = "2">
+						<div id = "type_cell_inner">
+							<div id = "type_cell_userbox_wrapper">
+								<input type = "textbox" id = "chat_sender" placeholder = "username..." />
+							</div>
+							<div id = "type_cell_textbox_wrapper">
+								<input type = "textbox" id = "chat_msg" placeholder = "type your message here..." />
+							</div>
+							<div id = "type_cell_submit_wrapper">
+								<input type = "button" id = "chat_submit" value = "send" />
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</body>
 </html>
