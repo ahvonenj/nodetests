@@ -67,7 +67,7 @@ body
 #chat_message_table td div
 {
 	overflow: hidden;
-	width: calc(80vh - 200px);
+	width: calc(80vw - 217px - 16px);
 	height: 100%;
 	line-height: 50px;
 	white-space: nowrap;

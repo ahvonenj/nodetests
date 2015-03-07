@@ -41,7 +41,7 @@ socket.on('userdisconnected', function(userlist)
 	var d = new Date();
 	var t = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
 	
-	var messageBody = '<tr><td><div class = "chat_message_container">[' + t + '] user disconnected from channel</div></td></tr>';
+	var messageBody = '<tr><td><div class = "chat_message_container">[' + t + '] user disconnected from chat</div></td></tr>';
 	
 	$('#chat_message_table #message_table_last_row').before(messageBody);
 	
